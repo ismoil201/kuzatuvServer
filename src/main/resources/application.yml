@@ -1,0 +1,22 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/newdb
+    username: postgres
+    password: 1234
+  jpa:
+    hibernate:
+      ddl-auto: update  # Hibernate schema avtomatik ravishda yangilanadi
+    database-platform: org.hibernate.dialect.PostgreSQLDialect  # PostgreSQL uchun dialect
+    show-sql: true  # SQL so'rovlarini konsolga chiqarish
+
+  security:
+    user:
+      name: admin
+      password: password  # Default foydalanuvchi yaratish uchun
+
+  cors:
+    allowed-origins: "*"  # Boshqa domenlardan kirish uchun ruxsat berish
+    allowed-methods: GET, POST, PUT, DELETE  # Ruxsat berilgan metodlar
